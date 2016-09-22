@@ -1,0 +1,378 @@
+
+    <style>
+      .collapse
+      {
+        cursor: pointer;
+        display: block;
+        background: #F0F8FF;
+      }
+      .collapse + input
+      {
+        display: none; /* hide the checkboxes */
+      }
+      .collapse + input + div
+      {
+        display:none;
+      }
+      .collapse + input:checked + div
+      {
+        display:block;
+      }
+    @media print
+    {
+      #menu {
+        display:none;
+      }
+
+    body {
+      font-family: Verdana, Helvetica, sans-serif;
+      }
+    
+    h1 {
+      font-size: 13pt;
+      font-weight:bold;
+      margin:4pt 0pt 0pt 0pt;
+      padding:0;
+      }
+
+    h2 {
+      font-size: 12pt;
+      font-weight:bold;
+      margin:3pt 0pt 0pt 0pt;
+      padding:0;
+      }
+
+    h3, a:link, a:visited {
+      font-size: 9pt;
+      font-weight:bold;
+      margin:1pt 0pt 0pt 20pt;
+      padding:0;
+      text-decoration: none;
+      color: #000000;
+      }
+
+    p,ul {
+      font-size: 9pt;
+      margin:1pt 0pt 8pt 40pt;
+      padding:0;
+      text-align:left;
+      }
+
+    li {
+      font-size: 9pt;
+      margin:0;
+      padding:0;
+      text-align:left;
+      }
+
+    td {
+      border:0px;
+      border-top:1px solid black;
+      font-size: 9pt;
+      }
+
+    .head td {
+      border:0px;
+      font-weight:bold;
+      font-size: 9pt;
+      }
+    .noprint { display: none; }
+    }
+
+  @media screen
+  {
+    body {
+      font-family: Verdana, Helvetica, sans-serif;
+      margin: 0px;
+      background-color: #FFFFFF;
+      color: #000000;
+      text-align: center;
+    }
+
+    #container {
+      text-align:left;
+      margin: 10px auto;
+      width: 90%;
+    }
+
+    h1 {
+      font-family: Verdana, Helvetica, sans-serif;
+      font-weight:bold;
+      font-size: 14pt;
+      color: #FFFFFF;
+      background-color:#2A0D45;
+      margin:10px 0px 0px 0px;
+      padding:5px 4px 5px 4px;
+      width: 100%;
+      border:1px solid black;
+      text-align: left;
+    }
+
+    h2 {
+      font-family: Verdana, Helvetica, sans-serif;
+      font-weight:bold;
+      font-size: 11pt;
+      color: #000000;
+      margin:30px 0px 0px 0px;
+      padding:4px;
+      width: 100%;
+      background-color:#F0F8FF;
+      text-align: left;
+    }
+
+    h2.green {
+      color: #000000;
+      background-color:#CCFFCC;
+      border-color:#006400;
+    }
+
+    h2.red {
+      color: #000000;
+      background-color:#FFCCCC;
+      border-color:#8B0000;
+    }
+     
+    h3 {
+      font-family: Verdana, Helvetica, sans-serif;
+      font-weight:bold;
+      font-size: 10pt;
+      color:#000000;
+      background-color: #FFFFFF;
+      width: 75%;
+      text-align: left;
+    }
+
+    p {
+      font-family: Verdana, Helvetica, sans-serif;
+      font-size: 8pt;
+      color:#000000;
+      background-color: #FFFFFF;
+      width: 75%;
+      text-align: left;
+    }
+
+    p i {
+      font-family: Verdana, Helvetica, sans-serif;
+      font-size: 8pt;
+      color:#000000;
+      background-color: #CCCCCC;
+    }
+
+    ul {
+      font-family: Verdana, Helvetica, sans-serif;
+      font-size: 8pt;
+      color:#000000;
+      background-color: #FFFFFF;
+      width: 75%;
+      text-align: left;
+    }
+
+    a {
+      font-family: Verdana, Helvetica, sans-serif;
+      text-decoration: none;
+      font-size: 8pt;
+      color:#000000;
+      font-weight:bold;
+      background-color: #FFFFFF;
+      color: #000000;
+    }
+
+    li a {
+      font-family: Verdana, Helvetica, sans-serif;
+      text-decoration: none;
+      font-size: 10pt;
+      color:#000000;
+      font-weight:bold;
+      background-color: #FFFFFF;
+      color: #000000;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a.up {
+        color:#006400;
+    }
+
+    table {
+      width: 80%;
+      border:0px;
+      color: #000000;
+      background-color: #000000;
+      margin:10px;
+    }
+
+    tr {
+      vertical-align:top;
+      font-family: Verdana, Helvetica, sans-serif;
+      font-size: 8pt;
+      color:#000000;
+      background-color: #FFFFFF;
+    }
+
+    tr.head {
+      background-color: #E1E1E1;
+      color: #000000;
+      font-weight:bold;
+    }
+
+    tr.open {
+      background-color: #CCFFCC;
+      color: #000000;
+    }
+    
+    tr.script {
+      background-color: #EFFFF7;
+      color: #000000;
+    }
+
+    tr.filtered {
+      background-color: #F2F2F2;
+      color: #000000;
+    }
+
+    tr.closed {
+      background-color: #F2F2F2;
+      color: #000000;
+    }
+      
+    td {
+      padding:2px;
+    }
+          
+    #menu li {
+      display         : inline;
+      margin          : 0;
+      /*margin-right    : 10px;*/
+      padding         : 0;
+      list-style-type : none;
+    }    
+   
+    #menubox {
+      position: fixed;
+      bottom: 0px;
+      right: 0px;
+      width: 120px;
+    }
+    .up {
+      color: #000000;
+      background-color:#CCFFCC;
+    }
+    
+    .down {
+      color:#626262;
+      background-color: #F2F2F2;
+    }
+
+    .print_only { display: none; }
+    .hidden { display: none; }
+    .unhidden { display: block; }
+    
+  }
+  </style>
+    
+  <body>
+    <a name="top"></a><div id="container">
+    <h1>Audit System Report - Scanned at 08/29/16 10:13:56</h1>
+    <a name="scansummary"></a><hr class="print_only">
+    <h2>Scan Summary</h2>
+    <h3> System Infomation </h3>
+    <ul>
+    <li>OS Name : Windows 7 SP1</li>
+    <li>OS Version : 6.1.7601</li>
+    <li>System Name : ThuyHuong-PC</li>
+    <li>User Name : ThuyHuong-PC/ThuyHuong</li>
+    <li>Machine Type : AMD64</li>
+    <li>Processor Name : Intel64 Family 6 Model 42 Stepping 7, GenuineIntel</li>
+    </ul>
+    <p></p>
+    <h3>Statistic Results</h3>
+    <ul>
+    <li>Warning : 6</li>
+    <li>Not Good : 15</li>
+    <li>Good or OK : 225</li>
+    <li>Not Config or Not Found : 97</li>
+    <li>Default : 215</li>
+    </ul>
+    <h1> WARNING : 6 </h1>
+    <br />
+     
+      <label class="collapse" for="_1">1. Account Policies \ Password Policy \  Store passwords using reversible encryption</label>
+      <input id="_1" type="checkbox"> 
+      <div> 
+        <p align="center"><b>(L1) Ensure 'Store passwords using reversible encryption' is set to 'Disabled'</b></hp> 
+        <h3>Profile Applicability:</h3> 
+          <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &#9679; Level 1 <br /> &nbsp; &nbsp; &nbsp; &nbsp; &#9679; Level 1 + BitLocker</p> 
+        <h3>Description: </h3> 
+          <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  This policy setting determines whether the operating system stores passwords in a way that uses reversible encryption, which provides support for application protocols that require knowledge of the user's password for authentication purposes. Passwords that are stored with reversible encryption are essentially the same as plaintext versions of the passwords.</p> 
+        <h3>Remediation:</h3> 
+            <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  To establish the recommended configuration via GP, set the following UI path to Disabled: Computer Configuration\Policies\Windows Settings\Security Settings\Account Policies\Password Policy\Store passwords using reversible encryption</p> 
+        </div>
+        <br />
+         
+      <label class="collapse" for="_2">2. Local Policies \ User Rights Assignment \ Deny log on locally</label>
+      <input id="_2" type="checkbox"> 
+      <div> 
+        <p align="center"><b>(L1) Ensure 'Deny log on locally' to include 'Guests'</b></hp> 
+        <h3>Profile Applicability:</h3> 
+          <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &#9679; Level 1 <br /> &nbsp; &nbsp; &nbsp; &nbsp; &#9679; Level 1 + BitLocker</p> 
+        <h3>Description: </h3> 
+          <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  This security setting determines which users are prevented from logging on at the computer. This policy setting supersedes the Allow log on locally policy setting if an account is subject to both policies. <br /> Important: If you apply this security policy to the Everyone group, no one will be able to log on locally.</p> 
+        <h3>Remediation:</h3> 
+            <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  To establish the recommended configuration via GP, set the following UI path to include Guests: Computer Configuration\Policies\Windows Settings\Security Settings\Local Policies\User Rights Assignment\Deny log on locally</p> 
+        </div>
+        <br />
+         
+      <label class="collapse" for="_3">3. Local Policies \ Security Options \ Interactive logon \ Interactive logon: Prompt user to change password before expiration</label>
+      <input id="_3" type="checkbox"> 
+      <div> 
+        <p align="center"><b>(L1) Ensure 'Interactive logon: Prompt user to change password before expiration' is set to 'between 5 and 14 days'</b></hp> 
+        <h3>Profile Applicability:</h3> 
+          <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &#9679; Level 1 <br /> &nbsp; &nbsp; &nbsp; &nbsp; &#9679; Level 1 + BitLocker</p> 
+        <h3>Description: </h3> 
+          <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  This policy setting determines how far in advance users are warned that their password will expire. It is recommended that you configure this policy setting to at least 5 days but no more than 14 days to sufficiently warn users when their passwords will expire.</p> 
+        <h3>Remediation:</h3> 
+            <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  To establish the recommended configuration via GP, set the following UI path to a value between 5 and 14 days: Computer Configuration\Policies\Windows Settings\Security Settings\Local Policies\Security Options\Interactive logon: Prompt user to change password before expiration</p> 
+        </div>
+        <br />
+         
+      <label class="collapse" for="_4">4. Administrative Templates (Computer) \ System \ Group Policy \ Configure registry policy processing: Do not apply during periodic background processing</label>
+      <input id="_4" type="checkbox"> 
+      <div> 
+        <p align="center"><b>(L1) Ensure 'Configure registry policy processing: Do not apply during periodic background processing' is set to 'Enabled: FALSE'</b></hp> 
+        <h3>Profile Applicability:</h3> 
+          <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &#9679; Level 1 <br /> &nbsp; &nbsp; &nbsp; &nbsp; &#9679; Level 1 + BitLocker</p> 
+        <h3>Description: </h3> 
+          <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  The "Do not apply during periodic background processing" option prevents the system from updating affected policies in the background while the computer is in use. When background updates are disabled, policy changes will not take effect until the next user logon or system restart.</p> 
+        <h3>Remediation:</h3> 
+            <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  To establish the recommended configuration via GP, set the following UI path to Enabled, then set the Do not apply during periodic background processing option to FALSE (unchecked): Computer Configuration\Policies\Administrative Templates\System\Group Policy\Configure registry policy processing</p> 
+        </div>
+        <br />
+         
+      <label class="collapse" for="_5">5. Administrative Templates (Computer) \ MSS (Legacy) \ MSS: (EnableICMPRedirect) Allow ICMP redirects to override OSPF generated routes</label>
+      <input id="_5" type="checkbox"> 
+      <div> 
+        <p align="center"><b>(L1) Ensure 'MSS: (EnableICMPRedirect) Allow ICMP redirects to override OSPF generated routes' is set to 'Disabled'</b></hp> 
+        <h3>Profile Applicability:</h3> 
+          <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &#9679; Level 1 <br /> &nbsp; &nbsp; &nbsp; &nbsp; &#9679; Level 1 + BitLocker</p> 
+        <h3>Description: </h3> 
+          <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  Internet Control Message Protocol (ICMP) redirects cause the IPv4 stack to plumb host routes. These routes override the Open Shortest Path First (OSPF) generated routes.</p> 
+        <h3>Remediation:</h3> 
+            <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  To establish the recommended configuration via GP, set the following UI path to Disabled: Computer Configuration\Policies\Administrative Templates\MSS (Legacy)\MSS: (EnableICMPRedirect) Allow ICMP redirects to override OSPF generated routes <br /> Note: This Group Policy path does not exist by default. An additional Group Policy template (MSS-legacy.admx/adml) is required - it is included with Microsoft Security Compliance Manager (SCM). </p> 
+        </div>
+        <br />
+         
+      <label class="collapse" for="_6">6. Administrative Templates (Computer) \ System \ Group Policy \ Configure registry policy processing: Process even if the Group Policy objects have not changed</label>
+      <input id="_6" type="checkbox"> 
+      <div> 
+        <p align="center"><b>(L1) Ensure 'Configure registry policy processing: Process even if the Group Policy objects have not changed' is set to 'Enabled: TRUE'</b></hp> 
+        <h3>Profile Applicability:</h3> 
+          <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &#9679; Level 1 <br /> &nbsp; &nbsp; &nbsp; &nbsp; &#9679; Level 1 + BitLocker</p> 
+        <h3>Description: </h3> 
+          <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  The "Process even if the Group Policy objects have not changed" option updates and reapplies policies even if the policies have not changed.</p> 
+        <h3>Remediation:</h3> 
+            <p> <br />   &nbsp;  &nbsp;  &nbsp;  &nbsp;  To establish the recommended configuration via GP, set the following UI path to Enabled, then set the Process even if the Group Policy objects have not changed option to TRUE (checked): Computer Configuration\Policies\Administrative Templates\System\Group Policy\Configure registry policy processing</p> 
+        </div>
+        <br />
+        
